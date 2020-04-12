@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>URL Shortener</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    </head>
+
+<body>
+    <section class="section">
+        <div class="container" >
+            <style>
+             h1{
+                padding-top: 100px;
+                align-content: center;
+                text-align: center;
+                font-family:'Times New Roman';
+                font-style: italic;
+                font-size: 50px;
+                color:black;
+            }
+            .w3-btn {
+                width:150px;
+                background-color:green;
+                color: white;
+            }
+            html{
+                background-color: #cccccc;
+            }
+            form{
+                align-content: center;
+                padding-top: 100px;
+                margin: auto;
+            }
+            div.control{
+                display: flex;
+                justify-content: center;
+                text-align: center;
+                padding-top: 30px;
+            }
+
+            div.field{
+                display: flex;
+                justify-content: center;
+                font-size: 25px;
+            }
+            div.button{
+                display: flex;
+                justify-content: center;
+                padding-top: 50px;
+            }
+            
+            </style>
+
+            <h1>Welcome to URL Shortener </h1>
+            <form method="POST" action="{{ url_for('short.add_link') }}">
+                <div class="field">
+                    <label class="label">Enter Original URL</label>
+                </div>
+
+                <div class="control">
+                        <input class="w3-input w3-border w3-animate-input" type="text" style="width:30%" name="original_url">
+                </div>
+                <div class="button">
+                 <button type="submit" class="w3-btn w3-round-large">Submit</button>     
+                </div>
+            </form>
+        </div>
+    </section>
+</body>
+
+</html>

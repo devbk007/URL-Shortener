@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>URL Shortener</title>
+</head>
+
+
+
+<body>
+    <style>
+        td{
+            padding-right: 20px;
+            padding-top: 30px;
+            padding-left: 20px;
+        }
+        
+        html{
+            background-color: #cccccc;
+        
+        }
+        tr{
+            padding-top: 30px;
+            color:black;
+        }
+    </style>
+    <section class="section">
+        <div class="container">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Original URL</th>
+                        <th>Shorted URL</th>
+                        <th>Visits</th>
+                    </tr>
+                </thead>
+                
+                <tbody>
+                    {% for link in links %}
+                    <tr>
+                        <td>{{ link.original_url }} </td>
+                        <td>{{ url_for('short.redirect_to_url', short_url=link.short_url, _external=True) }}</td>
+                        <td>{{ link.visits }} </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </section>
+</body>
+
+</html>
